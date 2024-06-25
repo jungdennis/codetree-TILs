@@ -88,7 +88,8 @@ for i in range(m):
         if it != dll.end():
             it = it.next
     elif 'D' == order[0]:
-        dll.erase(it)
+        if it != dll.end():
+            it = dll.erase(it)
     elif 'P' == order[0]:
         c = order.split()[1]
         dll.insert(it, c)
