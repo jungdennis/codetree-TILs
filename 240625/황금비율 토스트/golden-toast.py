@@ -46,12 +46,6 @@ class DLL:
             temp.next.prev = None
             self.head = temp.next
             temp.next = None
-        elif node == self.end():
-            temp = self.tail
-
-            temp.prev.next = None
-            self.tail = temp.prev
-            temp.prev = None
         else:
             node.prev.next = node.next
             node.next.prev = node.prev
