@@ -63,10 +63,10 @@ class DLL:
             new_node = Node(new_data)
             
             new_node.prev = node.prev
-            new_node.next = node.next
+            new_node.next = node
 
             node.prev.next = new_node
-            node.next.prev = new_node
+            node.prev = new_node
 
 n, m = map(int, input().split())
 
@@ -93,7 +93,6 @@ for i in range(m):
     elif 'P' == order[0]:
         c = order.split()[1]
         dll.insert(it, c)
-        it = it.next
     
 ans = ''
 it_ = dll.begin()
