@@ -94,11 +94,11 @@ for i in range(m):
         c = order.split()[1]
         dll.insert(it, c)
     
-ans = ''
-it_ = dll.begin()
-while it_ != dll.end():
-    if it_.data != -1:
-        ans += it_.data
-    it_ = it_.next
+    ans = ''
+    it_ = dll.begin()
+    while it_ != dll.end():
+        if it_.data != -1:
+            ans += it_.data
+        it_ = it_.next
 
-print(ans)
+    print(ans)
