@@ -10,19 +10,14 @@ class DLL:
         self.head = self.dummy
         self.tail = self.dummy
 
-    def end(self):
-        return self.tail
-
-    def begin(self):
-        return self.head
-
     def push_back(self, data):
-        if self.begin() == self.end():
+        if self.head == self.tail:
             new_data = Node(data)
 
             new_data.prev = self.head
             new_data.next = None
 
+            self.head.next = new_data
             self.tail = new_data
         else:
             new_data = Node(data)
@@ -34,7 +29,7 @@ class DLL:
             self.tail = new_data
 
     def push_front(self, data):
-        if self.begin() == self.end():
+        if self.head == self.tail:
             self.push_back(data)
         else:
             new_data = Node(data)
@@ -46,9 +41,9 @@ class DLL:
             self.head.next = new_data
 
     def insert(self, node, data):
-        if node == self.begin():
+        if node == self.head:
             self.push_front(data)
-        elif node == self.end():
+        elif node == self.tail:
             self.push_back(data)
         else:
             new_data = Node(data)
@@ -56,13 +51,13 @@ class DLL:
             new_data.prev = node
             new_data.next = node.next
 
-            node.next.prev = new_node
-            node.next = new_node
+            node.next.prev = new_data
+            node.next = new_data
             
     def delete(self, node):
         prev_node = node.prev
 
-        if node == self.end():
+        if node == self.tail:
             node.prev.next = None
             self.tail = node.prev
             node.prev = None
@@ -77,26 +72,36 @@ class DLL:
 
 order = input()
 dll = DLL()
-
 it = dll.head
+
 for c in order:
-    print(c)
+    print(f"( {c} )")
     if c == '<':
-        if it != dll.begin():
+        if it != dll.head:
             it = it.prev
     elif c == '>':
-        if it != dll.end():
+        if it != dll.tail:
             it = it.next
     elif c == '-':
-        if it != dll.begin():
+        if it != dll.head:
             it = dll.delete(it)
+
+            it_ = dll.head.next
+            ans = ''
+            while True:
+                if it_ == dll.tail:
+                    break
+                ans += it_.data
+                print(ans)
+                it_.next
     else:
         dll.insert(it, c)
 
-it_ = dll.head.next
-ans = ''
-while it != dll.end():
-    ans += it_.data
-    it_.next
-
-print(ans)
+        it_ = dll.head.next
+        ans = ''
+        while True:
+            if it_ == dll.tail:
+                break
+            ans += it_.data
+            print(ans)
+            it_.next
