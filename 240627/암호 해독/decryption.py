@@ -22,13 +22,15 @@ class DLL:
 
             new_data.prev = self.head
             new_data.next = None
+
+            self.tail = new_data
         else:
             new_data = Node(data)
 
-            new_data.prev = self.tail.prev
+            new_data.prev = self.tail
             new_data.next = None
 
-            self.tail.prev.next = new_data
+            self.tail.next = new_data
             self.tail = new_data
 
     def push_front(self, data):
@@ -54,28 +56,31 @@ class DLL:
             new_data.prev = node
             new_data.next = node.next
 
-            node.next = new_node
             node.next.prev = new_node
-
+            node.next = new_node
+            
     def delete(self, node):
+        prev_node = node.prev
+
         if node == self.end():
             node.prev.next = None
             self.tail = node.prev
-            # node.prev = None
-            # node.next = None
+            node.prev = None
+            node.next = None
         else:
             node.prev.next = node.next
             node.next.prev = node.prev
-            # node.prev = None
-            # node.next = None
+            node.prev = None
+            node.next = None
 
-        return node.prev
+        return prev_node
 
 order = input()
 dll = DLL()
-print(order)
+
 it = dll.head
 for c in order:
+    print(c)
     if c == '<':
         if it != dll.begin():
             it = it.prev
@@ -88,10 +93,10 @@ for c in order:
     else:
         dll.insert(it, c)
 
-    it_ = dll.head
-    ans = ''
-    while it != dll.end():
-        ans += it_.data
-        it_.next
+it_ = dll.head.next
+ans = ''
+while it != dll.end():
+    ans += it_.data
+    it_.next
 
-    print(ans)
+print(ans)
