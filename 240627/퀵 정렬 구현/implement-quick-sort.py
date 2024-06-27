@@ -32,7 +32,7 @@ def partition(low, high):
     idx, pivot = select_pivot(low, high)
     swap(idx, high)
 
-    i = 0
+    i = low
     for j in range(low, high):
         if arr[j] < pivot:
             swap(i, j)
