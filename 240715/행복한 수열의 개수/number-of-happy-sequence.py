@@ -19,9 +19,8 @@ for r in range(n):
         elif grid[r][j] != grid[r][j+1]:
             cnt = 1
 
-        if cnt >= m:
-            happy += 1
-            break
+        if cnt >= max_cnt:
+                max_cnt = cnt
 
     #     print(f"{grid[r][j]} - {grid[r][j+1]} : {cnt}, {max_cnt}")
     # print(f"row {r}:{max_cnt}")
