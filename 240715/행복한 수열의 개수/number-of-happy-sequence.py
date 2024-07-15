@@ -9,34 +9,44 @@ for i in range(n):
 for r in range(n):
     max_cnt = 1
     cnt = 1
-    temp = 0
+    # print(f"<row {r}>")
     for j in range(n):
-        if grid[r][j] == temp:
+        if j+1 >= n:
+            continue
+
+        if grid[r][j] == grid[r][j+1]:
             cnt += 1
-        else:
-            temp = grid[r][j]
+        elif grid[r][j] != grid[r][j+1]:
             cnt = 1
 
         if cnt >= max_cnt:
-            max_cnt = cnt
-        
+                max_cnt = cnt
+
+    #     print(f"{grid[r][j]} - {grid[r][j+1]} : {cnt}, {max_cnt}")
+    # print(f"row {r}:{max_cnt}")
+    
     if max_cnt >= m:
         happy += 1
 
 for c in range(n):
     max_cnt = 1
     cnt = 1
-    temp = 0
+    # print(f"<col {c}>")
     for i in range(n):
-        if grid[i][c] == temp:
+        if i+1 >= n:
+            continue
+
+        if grid[i][c] == grid[i+1][c]:
             cnt += 1
-        else:
-            temp = grid[i][c]
+        elif grid[i][c] != grid[i+1][c]:
             cnt = 1
 
         if cnt >= max_cnt:
-            max_cnt = cnt
-
+                max_cnt = cnt
+                
+    #     print(f"{grid[i][c]} - {grid[i+1][c]} : {cnt}, {max_cnt}")
+    # print(f"col {c}:{max_cnt}")
+    
     if cnt >= m:
         happy += 1
 
