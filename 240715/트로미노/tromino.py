@@ -31,10 +31,10 @@ for i in range(n):
         if (j+2 >= n):
             continue
 
-        s = grid[i][j] + grid[i][j+1] + grid[i][j+2]
+        s_row = grid[i][j] + grid[i][j+1] + grid[i][j+2]
 
-        if s > max_sum:
-            max_sum = s
+        if s_row > max_sum:
+            max_sum = s_row
 
 # 세로 일자
 for i in range(n):
@@ -42,9 +42,9 @@ for i in range(n):
         if (i+2 >= n):
             continue
 
-        s = grid[i][j] + grid[i+1][j] + grid[i+2][j]
+        s_col = grid[i][j] + grid[i+1][j] + grid[i+2][j]
 
-        if s > max_sum:
-            max_sum = s
+        if s_col > max_sum:
+            max_sum = s_col
 
 print(max_sum)
