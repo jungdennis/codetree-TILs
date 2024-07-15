@@ -47,7 +47,7 @@ for c in range(n):
     #     print(f"{grid[i][c]} - {grid[i+1][c]} : {cnt}, {max_cnt}")
     # print(f"col {c}:{max_cnt}")
     
-    if cnt >= m:
+    if max_cnt >= m:
         happy += 1
 
 print(happy)
