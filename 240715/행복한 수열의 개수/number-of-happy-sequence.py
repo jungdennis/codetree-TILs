@@ -9,8 +9,8 @@ for i in range(n):
 for r in range(n):
     max_cnt = 0
     cnt = 1
-    temp = grid[r][0]
-    for j in range(1, n):
+    temp = 0
+    for j in range(n):
         if grid[r][j] == temp:
             cnt += 1
         else:
@@ -27,8 +27,8 @@ for r in range(n):
 for c in range(n):
     max_cnt = 0
     cnt = 1
-    temp = grid[0][c]
-    for i in range(1, n):
+    temp = 0
+    for i in range(n):
         if grid[i][c] == temp:
             cnt += 1
         else:
