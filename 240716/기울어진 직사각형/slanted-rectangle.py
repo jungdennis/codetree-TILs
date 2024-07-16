@@ -38,6 +38,10 @@ def earn_score(n, grid, r, c, h, w):
 
         if (r_now < 0) or (r_now >= n) or (c_now < 0) or (c_now >= n):
             return 0
+        elif (r_now == r) and (c_now == c):
+            pass
+        else:
+            score += grid[r_now][c_now]
 
     return score
 
