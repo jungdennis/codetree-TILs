@@ -1,12 +1,9 @@
 import sys
 
-def find_square(grid, n, m, r, c):
-    max_r = n - r
-    max_c = m - c
-    
+def find_square(grid, h, w, r, c):
     cnt = 0
-    for i in range(max_r):
-        for j in range(max_c):
+    for i in range(h):
+        for j in range(w):
             if grid[r+i][c+j] <=0:
                 return 0
             else:
@@ -23,9 +20,14 @@ for i in range(n):
 max_cnt = 0
 for r in range(n):
     for c in range(m):
-        cnt = find_square(grid, n, m, r, c)
+        max_h = n - r
+        max_w = m - c
 
-        if cnt > max_cnt:
-            max_cnt = cnt
+        for h in range(1, max_h):
+            for w in range(1, max_w):
+                cnt = find_square(grid, h, w, r, c)
+
+                if cnt > max_cnt:
+                    max_cnt = cnt
 
 print(max_cnt)
