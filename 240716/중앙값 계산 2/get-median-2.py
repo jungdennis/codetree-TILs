@@ -5,4 +5,5 @@ for i in range(n):
     arr.append(arr_num[i])
 
     if i % 2 == 0:
+        arr.sort()
         print(arr[i//2], end=' ')
