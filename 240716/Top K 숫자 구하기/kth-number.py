@@ -1,4 +1,4 @@
-k, N = map(int, input().split())
+N, k = map(int, input().split())
 arr = list(map(int, input().split()))
 
 arr.sort()
