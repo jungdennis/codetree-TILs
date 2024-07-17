@@ -12,4 +12,6 @@ for i in range(t):
     belt = [temp] + belt[:-1]
 
 for i in range(3):
-    print(belt[3*i], belt[3*i+1], belt[3*i+2])
+    for j in range(n):
+        print(belt[n*i+j], end=' ')
+    print()
