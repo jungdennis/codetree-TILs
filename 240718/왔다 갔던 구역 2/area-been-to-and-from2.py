@@ -23,9 +23,9 @@ for i in range(n):
 
 cnt = 0
 # l = []
-# for i in range(len(arr)):
-#     if arr[i] >= 1:
-#         cnt += 1
-#         l.append((i - 1000, arr[i]))
+for i in range(len(arr)):
+    if arr[i] >= 1:
+        # cnt += 1
+        l.append((i - 1000, arr[i]))
 # print(l)
 print(cnt)
