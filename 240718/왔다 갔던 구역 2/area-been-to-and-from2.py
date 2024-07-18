@@ -8,24 +8,15 @@ for i in range(n):
 
     if d == "R":
         for j in range(loc, loc + x):
-            arr[j] += 1
+            arr[j] = arr[j] + 1
         loc = loc + x
     elif d == "L":
-        for j in range(loc - x, x):
-            arr[j] += 1
+        for j in range(loc - x, loc):
+            arr[j] = arr[j] + 1
         loc = loc - x
 
-    # l = []
-    # for i in range(len(arr)):
-    #     if arr[i] >= 1:
-    #         l.append((i - 1000, arr[i]))
-    # print(l)
-
 cnt = 0
-# l = []
 for i in range(len(arr)):
-    if arr[i] >= 1:
+    if arr[i] >= 2:
         cnt += 1
-        # l.append((i - 1000, arr[i]))
-# print(l)
 print(cnt)
