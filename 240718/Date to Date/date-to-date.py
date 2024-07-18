@@ -13,4 +13,4 @@ for i in range(m2):
 end_day += d2
 
 
-print(end_day - start_day + 1)
+print(end_day - start_day)
