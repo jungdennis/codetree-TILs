@@ -1,5 +1,5 @@
-arr = [0 for i in range(101)]
-loc = 0
+arr = [0 for i in range(-1000, 1001)]
+loc = 1000
 n = int(input())
 
 for i in range(n):
