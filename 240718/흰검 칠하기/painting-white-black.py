@@ -13,7 +13,7 @@ for i in range(n):
         for j in range(loc, loc+x):
             arr[j][0] += 1
             arr[j][2] = 'black'
-        loc = loc + x - 1
+        loc = loc + x
     elif d == 'L':  # 왼쪽 - 흰색
         for j in range(loc-x, loc):
             arr[j][1] += 1
