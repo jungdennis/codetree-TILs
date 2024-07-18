@@ -8,12 +8,12 @@ for i in range(n):
 
     if d == "R":
         for j in range(x):
-            loc += 1
             arr[loc] += 1
+            loc += 1
     elif d == "L":
         for j in range(x):
-            loc -= 1
             arr[loc] += 1
+            loc -= 1
 
 cnt = 0
 for a in arr:
