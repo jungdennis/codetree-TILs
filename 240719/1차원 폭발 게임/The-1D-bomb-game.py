@@ -6,9 +6,6 @@ for i in range(n):
     arr.append(int(sys.stdin.readline().rstrip()))
 
 while 1:
-    if len(arr) == 0:
-        break
-
     boom = False
     boom_idx = [0]
     memory = arr[0]
@@ -40,6 +37,9 @@ while 1:
                 temp.append(a)
         arr = temp
     else:
+        break
+
+    if len(arr) == 0:
         break
 
 print(len(arr))
