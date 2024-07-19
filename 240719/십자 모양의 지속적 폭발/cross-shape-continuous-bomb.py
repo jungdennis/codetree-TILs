@@ -39,7 +39,10 @@ for k in range(m):
                 for i in range(n-1, -1, -1):
                     arr[i][j] = temp[n-1-i]
 
+            break
+
 for i in range(n):
     for j in range(n):
         print(arr[i][j], end=' ')
     print()
+print('\n')
