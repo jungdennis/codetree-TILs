@@ -21,17 +21,23 @@ for x in range(xb1, xb2):
     for y in range(yb1, yb2):
         arr[x][y] = 0
 
-x_min = 9999
-x_max = 0
-y_min = 9999
-y_max = 0
+x = []
+y = []
 
 for i in range(len(arr)):
     for j in range(len(arr[i])):
         if arr[i][j] > 0:
-            x_min = min(x_min, i)
-            x_max = max(x_max, i)
-            y_min = min(y_min, j)
-            y_max = max(y_max, j)
+            x.append(i)
+            y.append(j)
 
+if len(x) != 0:
+    x_min, x_max = min(x), max(x)
+else:
+    x_min, x_max = 0, 0
+
+if len(y) != 0:
+    y_min, y_max = min(y), max(y)
+else:
+    y_min, y_max = 0, 0
+    
 print((x_max - x_min + 1) * (y_max - y_min + 1))
