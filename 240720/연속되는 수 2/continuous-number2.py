@@ -5,7 +5,7 @@ for i in range(n):
 
 temp = arr[0]
 cnt = 1
-max_cnt = 0
+max_cnt = 1
 for i in range(1, n):
     if temp == arr[i]:
         cnt += 1
