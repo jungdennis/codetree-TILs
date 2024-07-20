@@ -15,4 +15,4 @@ for i in range(1, n):
         cnt = 1
         temp = arr[i]
 
-print(max_cnt)
+print(max(max_cnt, cnt))
