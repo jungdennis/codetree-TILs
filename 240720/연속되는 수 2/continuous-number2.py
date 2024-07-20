@@ -10,9 +10,10 @@ for i in range(1, n):
     if temp == arr[i]:
         cnt += 1
     else:
-        if cnt > max_cnt:
-            max_cnt = cnt
         cnt = 1
         temp = arr[i]
 
-print(max(max_cnt, cnt))
+    if cnt > max_cnt:
+        max_cnt = cnt
+
+print(max_cnt)
