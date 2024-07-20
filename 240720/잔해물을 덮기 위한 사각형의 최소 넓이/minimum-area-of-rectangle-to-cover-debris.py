@@ -30,14 +30,9 @@ for i in range(len(arr)):
             x.append(i)
             y.append(j)
 
-if len(x) != 0:
+if (len(x) != 0) and (len(y) != 0):
     x_min, x_max = min(x), max(x)
-else:
-    x_min, x_max = 0, 0
-
-if len(y) != 0:
     y_min, y_max = min(y), max(y)
+    print((x_max - x_min + 1) * (y_max - y_min + 1))
 else:
-    y_min, y_max = 0, 0
-    
-print((x_max - x_min + 1) * (y_max - y_min + 1))
+    print(0)
