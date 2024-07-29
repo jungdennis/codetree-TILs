@@ -6,7 +6,7 @@ dr = [0, 1, 0, -1]
 dc = [1, 0, -1, 0]
 
 def in_range(x, y):
-    return x >= 0 and x < n and y >= 0 and y < n
+    return x >= 0 and x < n and y >= 0 and y < m
 
 r = 0
 c = 0
@@ -18,7 +18,7 @@ for x in range(1, n*m+1):
     if not in_range(nr, nc) or arr[nr][nc] != 0:
         i += 1
         nr, nc = r + dr[i % 4], c + dc[i % 4]
-        
+
     r, c = nr, nc
     
         
