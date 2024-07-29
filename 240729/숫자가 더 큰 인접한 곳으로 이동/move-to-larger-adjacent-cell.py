@@ -13,7 +13,7 @@ for i in range(n):
 
 visited = []
 
-drs = [0, 0, -1, 1]
+drs = [0, 0, 1, -1]
 dcs = [1, -1, 0, 0]
 while True:
     visited.append(arr[r][c])
