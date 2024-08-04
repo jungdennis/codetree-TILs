@@ -14,10 +14,11 @@ for t, x, y in shake_info:
     if virus[x] == 1 and spread[x] < k:
         spread[x] += 1
         virus[y] = 1
-    
+        continue
     if virus[y] == 1 and spread[y] < k:
         spread[y] += 1
         virus[x] = 1
+        continue
 
 for i in range(1, n+1):
     print(virus[i], end='')
