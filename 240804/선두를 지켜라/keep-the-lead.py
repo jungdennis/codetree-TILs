@@ -22,10 +22,12 @@ def find_first(t):
     elif move_A[t] < move_B[t]:
         return 'B'
     else:
-        return first[-1]
+        return False
 
 for i in range(1, len(move_A)):
-    first.append(find_first(i))
+    f_ = find_first(i)
+    if f_:
+        first.append(f_)
 
 cnt = 0
 for i in range(len(first)-1):
