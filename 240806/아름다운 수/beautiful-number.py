@@ -5,8 +5,10 @@ arr = []
 n = int(input())
 
 def beautiful(x):
+    global cnt
+
     if x == n:
-        arr.append(1)
+        cnt += 1
         return
     elif x > n:
         return
@@ -21,4 +23,4 @@ def beautiful(x):
             digit.pop()
 
 beautiful(0)
-print(len(arr))
+print(cnt)
