@@ -17,8 +17,8 @@ for o in order:
         x, y = x+dx[delta%4], y+dy[delta%4]
         t += 1
 
-        if x == 0 and y == 0:
-            break
+    if x == 0 and y == 0:
+        break
 
 if x != 0 and y != 0:
     t = -1
