@@ -27,10 +27,9 @@ def pick_line(x):
     if x >= n:
         global max_cnt
         set_pick = set(pick)
-
         if detect(set_pick):
             max_cnt = max(max_cnt, len(set_pick))
-            
+
         return 
 
     for i in range(n):
