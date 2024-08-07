@@ -1,6 +1,8 @@
+import sys
+
 equ = input()
 
-max_result = - (2 ^ 31)
+max_result = - sys.maxsize
 alpha = ['a', 'b', 'c', 'd', 'e', 'f']
 num = []
 char = []
