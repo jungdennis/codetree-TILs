@@ -33,11 +33,11 @@ def pick_line(x):
         return 
 
     for i in range(n):
-        if line[i] not in pick:
-            pick.append(line[i])
+        pick.append(line[i])
         pick_line(x+1)
-        if line[i] not in pick:
-            pick.pop()
+        
+        pick.pop()
+        pick_line(x+1)
 
 pick_line(0)
 print(max_cnt)
