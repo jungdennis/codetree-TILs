@@ -50,9 +50,9 @@ def two_thief(x):
 
         r0, c0, len0, cost0 = steal[0]
         r1, c1, len1, cost1 = steal[1]
-        # print((r0, c0), (r1, c1), cost0, cost1)
 
         if not overlap((r0, c0, len0), (r1, c1, len1)):
+            # print((r0, c0, len0), (r1, c1, len1), cost0, cost1)
             max_cost = max(max_cost, cost0+cost1)
 
         return
