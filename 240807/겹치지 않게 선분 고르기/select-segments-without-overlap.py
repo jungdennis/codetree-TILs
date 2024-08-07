@@ -11,33 +11,32 @@ pick = []
 max_cnt = 0
 
 def detect(s):
-    check = [0] * (max_num+1)
+    x1, x2 = s[-1]
 
-    for x1, x2 in s:
-        for i in range(x1, x2+1):
-            check[i] += 1
-
-            if check[i] > 1:
-                return False
+    for start, end in s[:-1]:
+        if x1 <= end:
+            return False
     
     return True
 
 def pick_line(x):
     global max_cnt
-    set_pick = set(pick)
     
-    if detect(set_pick):
-        max_cnt = max(max_cnt, len(set_pick))
-    else:
-        return 
+    if len(pick) != 0:
+        if detect(pick):
+            max_cnt = max(max_cnt, len(pick))
+        else:
+            return 
 
     if x >= n:
         return 
 
     for i in range(n):
+        # 선분을 넣었을 경우
         pick.append(line[i])
         pick_line(x+1)
         
+        # 선분을 뺐을 경우
         pick.pop()
         pick_line(x+1)
 
