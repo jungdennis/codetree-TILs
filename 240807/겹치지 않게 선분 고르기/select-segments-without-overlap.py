@@ -11,22 +11,24 @@ pick = []
 max_cnt = 0
 
 def detect(s):
-    x1, x2 = s[-1]
+    check = [0] * (max_num+1)
 
-    for start, end in s[:-1]:
-        if x1 <= end:
-            return False
+    for x1, x2 in s:
+        for i in range(x1, x2+1):
+            check[i] += 1
+
+            if check[i] > 1:
+                return False
     
     return True
 
 def pick_line(x):
     global max_cnt
     
-    if len(pick) != 0:
-        if detect(pick):
-            max_cnt = max(max_cnt, len(pick))
-        else:
-            return 
+    if detect(pick):
+        max_cnt = max(max_cnt, len(pick))
+    else:
+        return 
 
     if x >= n:
         return 
