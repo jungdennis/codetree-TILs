@@ -1,6 +1,6 @@
 equ = input()
 
-max_result = 0
+max_result = - (2 ^ 31)
 alpha = ['a', 'b', 'c', 'd', 'e', 'f']
 num = []
 char = []
@@ -14,7 +14,6 @@ for c in equ:
 def calc(x):
     if x >= 6:
         global max_result
-
         result = num[alpha.index(char[0])]
 
         for i in range(len(symbol)):
