@@ -31,14 +31,13 @@ def pick_line(x):
     if x >= n:
         return 
 
-    for i in range(n):
-        # 선분을 넣었을 경우
-        pick.append(line[i])
-        pick_line(x+1)
-        
-        # 선분을 뺐을 경우
-        pick.pop()
-        pick_line(x+1)
+    # 선분을 넣었을 경우
+    pick.append(line[x])
+    pick_line(x+1)
+    
+    # 선분을 뺐을 경우
+    pick.pop()
+    pick_line(x+1)
 
 pick_line(0)
 print(max_cnt)
