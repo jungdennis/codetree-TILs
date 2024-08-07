@@ -35,7 +35,8 @@ def pick_line(x):
     for i in range(n):
         if line[i] not in pick:
             pick.append(line[i])
-            pick_line(x+1)
+        pick_line(x+1)
+        if line[i] not in pick:
             pick.pop()
 
 pick_line(0)
