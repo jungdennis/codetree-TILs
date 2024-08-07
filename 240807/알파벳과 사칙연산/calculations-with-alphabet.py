@@ -1,6 +1,6 @@
 equ = input()
 
-alpha = []
+alpha = ['a', 'b', 'c', 'd', 'e', 'f']
 char = []
 symbol = []
 for c in equ:
@@ -12,14 +12,11 @@ for c in equ:
             alpha.append(c)
 
 alpha.sort()
-# print(alpha)
-# print(char)
-# print(symbol)
 
 num = []
 max_result = 0
 def calc(x):
-    if x >= len(alpha):
+    if x >= 6:
         global max_result
 
         for c in equ:
