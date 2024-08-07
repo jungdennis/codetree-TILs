@@ -8,10 +8,6 @@ for c in equ:
         symbol.append(c)
     else:
         char.append(c)
-        if c not in alpha:
-            alpha.append(c)
-
-alpha.sort()
 
 num = []
 max_result = 0
