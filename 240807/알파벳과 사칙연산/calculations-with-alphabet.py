@@ -15,19 +15,18 @@ def calc(x):
     if x >= 6:
         global max_result
 
-        for c in equ:
-            result = num[alpha.index(char[0])]
+        result = num[alpha.index(char[0])]
 
-            for i in range(len(symbol)):
-                n = num[alpha.index(char[i+1])]
-                if symbol[i] == '+':
-                    result += n
-                elif symbol[i] == '-':
-                    result -= n
-                elif symbol[i] == '*':
-                    result *= n
+        for i in range(len(symbol)):
+            n = num[alpha.index(char[i+1])]
+            if symbol[i] == '+':
+                result += n
+            elif symbol[i] == '-':
+                result -= n
+            elif symbol[i] == '*':
+                result *= n
 
-            max_result = max(max_result, result)
+        max_result = max(max_result, result)
 
         return
 
