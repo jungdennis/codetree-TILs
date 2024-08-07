@@ -7,7 +7,7 @@ for i in range(n):
 
 import sys
 max_candy = -sys.maxsize
-for c in range(k+1, 100-k):
+for c in range(k+1, 100-k+1):
     candy = sum(arr[c-k:c+k+1])
     max_candy = max(max_candy, candy)
 
