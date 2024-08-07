@@ -1,27 +1,40 @@
 equ = input()
 
-arr = []
+alpha = []
+char = []
+symbol = []
 for c in equ:
     if c in ['+', '-', '*']:
-        arr.append(c)
+        symbol.append(c)
+    else:
+        char.append(c)
+        if c not in alpha:
+            alpha.append(c)
+
+alpha.sort()
+# print(alpha)
+# print(char)
+# print(symbol)
 
 num = []
 max_result = 0
 def calc(x):
-    if x >= len(arr)+1:
+    if x >= len(alpha):
         global max_result
 
-        result = num[0]
+        for c in equ:
+            result = num[alpha.index(char[0])]
 
-        for i in range(len(arr)):
-            if arr[i] == '+':
-                result += num[i+1]
-            elif arr[i] == '-':
-                result -= num[i+1]
-            elif arr[i] == '*':
-                result *= num[i+1]
+            for i in range(len(symbol)):
+                n = num[alpha.index(char[i+1])]
+                if symbol[i] == '+':
+                    result += n
+                elif symbol[i] == '-':
+                    result -= n
+                elif symbol[i] == '*':
+                    result *= n
 
-        max_result = max(max_result, result)
+            max_result = max(max_result, result)
 
         return
 
