@@ -12,7 +12,7 @@ def pick(x):
             score += 1
 
     if score > max_score:
-        print(location, score)
+        # print(location, score)
         max_score = score
     
     if x >= n:
