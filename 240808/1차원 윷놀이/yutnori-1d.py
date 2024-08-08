@@ -4,18 +4,18 @@ location = [1] * k
 max_score = 0
 
 def pick(x):
-    if x >= n:
-        global max_score
+    global max_score
         
-        score = 0
-        for l in location:
-            if l >= m:
-                score += 1
+    score = 0
+    for l in location:
+        if l >= m:
+            score += 1
 
-        if score > max_score:
-            # print(order, location, score)
-            max_score = score
-
+    if score > max_score:
+        print(location, score)
+        max_score = score
+    
+    if x >= n:
         return
 
     for i in range(k):
