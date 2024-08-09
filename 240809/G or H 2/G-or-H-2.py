@@ -22,7 +22,7 @@ for i in range(101):
                 elif c == 'H':
                     cnt_H += 1
 
-            if cnt_G == cnt_H:
+            if cnt_G == cnt_H or cnt_G == 0 or cnt_H == 0:
                 distance = abs(i-j)
 
                 max_distance = max(max_distance, distance)
