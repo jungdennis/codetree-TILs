@@ -12,24 +12,23 @@ def check_impossible(arr):
             
             if arr1 == arr2:
                 return True
-
         return False
 
 def make_array(x):
-    if check_impossible(arr):
-        return
+    # if check_impossible(arr):
+    #     return
 
     if x >= n:
-        # print(arr)
-        ans = 0
+        result = 0
         for i in range(len(arr)):
-            ans += arr[i] * (10 ** i)
-        possible.append(ans)
+            result += arr[i] * (10 ** (n -1 - i))
+
+        possible.append(result)
         return
 
     for num in [4, 5, 6]:
-        # if x >= 1 and check_impossible(arr + [num]):
-        #     continue
+        if check_impossible(arr + [num]):
+            continue
 
         arr.append(num)
         make_array(x+1)
