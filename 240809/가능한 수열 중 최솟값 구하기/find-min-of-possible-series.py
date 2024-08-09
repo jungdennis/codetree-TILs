@@ -1,6 +1,8 @@
+import sys
+
 n = int(input())
 arr = []
-possible = []
+ans = sys.maxsize
 
 def check_impossible(arr):
     if len(arr) <= 1:
@@ -19,11 +21,11 @@ def make_array(x):
     #     return
 
     if x >= n:
-        result = 0
-        for i in range(len(arr)):
-            result += arr[i] * (10 ** (n -1 - i))
+        global ans
 
-        possible.append(result)
+        print(''.join(map(str, arr)))
+        sys.exit()
+        
         return
 
     for num in [4, 5, 6]:
@@ -35,4 +37,4 @@ def make_array(x):
         arr.pop()
 
 make_array(0)
-print(possible[0])
+print(ans)
