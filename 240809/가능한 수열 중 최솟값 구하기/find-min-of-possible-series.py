@@ -2,7 +2,6 @@ import sys
 
 n = int(input())
 arr = []
-ans = sys.maxsize
 
 def check_impossible(arr):
     if len(arr) <= 1:
@@ -25,7 +24,6 @@ def make_array(x):
 
         print(''.join(map(str, arr)))
         sys.exit()
-        
         return
 
     for num in [4, 5, 6]:
@@ -37,4 +35,3 @@ def make_array(x):
         arr.pop()
 
 make_array(0)
-print(ans)
