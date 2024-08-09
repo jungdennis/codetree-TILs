@@ -1,24 +1,35 @@
 n = int(input())
 max_jump = list(map(int, input().split()))
+arr = [0]
+location = 0
+possible = []
 
-debug = [1]
-location = 1
-cnt = n+1
+import sys
+cnt = sys.maxsize
 
 def jump(x):
-    global location, cnt
-
-    if location == n:
+    global location
+    if location == n-1:
+        global cnt
         cnt = min(cnt, x)
+        possible.append(x)
+        
         return
 
-    if x >= n:
+    if x >= n-2:
         return
 
-    for i in range(1, max_jump[x]+1):
-        location += i
+    for dx in range(max_jump[location]+1):
+        location += dx
+        arr.append(location)
         jump(x+1)
-        location -= i
+        location -= dx
+        arr.pop()
 
+# if cnt == sys.maxsize:
+#     cnt = -1
 jump(0)
-print(cnt)
+if len(possible) == 0:
+    print(-1)
+else:
+    print(min(possible))
