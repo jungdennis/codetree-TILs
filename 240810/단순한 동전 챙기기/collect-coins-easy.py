@@ -35,6 +35,7 @@ def pick(n_pick, last_idx):
             x2, y2, _ = route[i+1]
             distance += (abs(x1 - x2) + abs(y1 - y2))
 
+        print()
         min_distance = min(distance, min_distance)
 
     for i in range(len(coin)):
