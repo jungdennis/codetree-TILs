@@ -1,10 +1,10 @@
 import sys
 
-n = int(input())
+n = int(sys.stdin.readline().rstrip())
 arr = []
 
 for i in range(n):
-    arr.append(list(input()))
+    arr.append(list(sys.stdin.readline().rstrip()))
 
 start = (0, 0)
 end = (0, 0)
@@ -34,8 +34,10 @@ def pick(n_pick, last_idx):
             x1, y1, _ = route[i]
             x2, y2, _ = route[i+1]
             distance += (abs(x1 - x2) + abs(y1 - y2))
-
+        # print(route, distance)
         min_distance = min(distance, min_distance)
+
+        return
 
     for i in range(len(coin)):
         if i <= last_idx:
