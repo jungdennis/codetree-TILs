@@ -17,7 +17,7 @@ def pick(x):
         route = [1] + picked + [1]
 
         for i in route[:-1]:
-            score += arr[i][i+1]
+            score += arr[i-1][i]
         
         min_score = min(score, min_score)
 
