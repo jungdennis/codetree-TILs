@@ -19,14 +19,18 @@ def pick(last_num):
         for i in range(len(route) - 1):
             start = route[i] - 1
             end = route[i+1] - 1
-            score += arr[start][end]
-
+            if arr[start][end] != 0:
+                score += arr[start][end]
+            else:
+                return
+                
         min_score = min(score, min_score)
 
         return
 
     for i in range(2, n+1):
-        if visited[i] == 1 or arr[last_num - 1][i - 1] == 0:
+        # if visited[i] == 1 or arr[last_num - 1][i - 1] == 0:
+        if visited[i] == 1:
             continue
 
         picked.append(i)
