@@ -9,8 +9,8 @@ picked = []
 visited = [1, 1] + [0] * (n-1)
 min_score = sys.maxsize
 
-def pick(x):
-    if x >= n - 1:
+def pick(last_num):
+    if len(picked) >= n - 1:
         global min_score
 
         score = 0
@@ -26,13 +26,13 @@ def pick(x):
         return
 
     for i in range(2, n+1):
-        if visited[i] == 1:
+        if visited[i] == 1 or arr[last_num - 1][i - 1] == 0:
             continue
 
         picked.append(i)
         visited[i] = 1
 
-        pick(x+1)
+        pick(i)
 
         picked.pop()
         visited[i] = 0
