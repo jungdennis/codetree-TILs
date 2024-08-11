@@ -6,19 +6,21 @@ for i in range(n):
     arr.append(list(map(int, input().split())))
 
 picked = []
-visited = [0] * (n+1)
+visited = [1, 1] + [0] * (n-1)
 min_score = sys.maxsize
 
 def pick(x):
-    if x >= n:
+    if x >= n - 1:
         global min_score
 
         score = 0
         route = [1] + picked + [1]
 
-        for i in route[:-1]:
-            score += arr[i-1][i]
-        
+        for i in range(len(route) - 1):
+            start = route[i] - 1
+            end = route[i+1] - 1
+            score += arr[start][end]
+
         min_score = min(score, min_score)
 
         return
