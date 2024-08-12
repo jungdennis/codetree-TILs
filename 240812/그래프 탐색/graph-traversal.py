@@ -14,6 +14,8 @@ approach = []
 def move(last_node):
     if last_node not in approach:
         approach.append(last_node)
+    else:
+        return
 
     for i in graph[last_node]:
         if visited[i] == 0:
