@@ -10,12 +10,11 @@ for i in range(m):
 
 visited = [1, 1] + [0] * (n-1)
 node = []
-max_node = -sys.maxsize
+approach = []
 
 def move(last_node):
-    global max_node
-    print(node)
-    max_node = max(len(node), max_node)
+    if last_node != 1 and last_node not in approach:
+        approach.append(last_node)
 
     for i in range(1, n+1):
         if arr[last_node][i] == 1 and visited[i] == 0:
@@ -28,4 +27,4 @@ def move(last_node):
             visited[i] = 0
 
 move(1)
-print(max_node)
+print(len(approach))
