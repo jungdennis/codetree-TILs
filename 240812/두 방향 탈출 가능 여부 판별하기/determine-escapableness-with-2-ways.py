@@ -23,7 +23,7 @@ def move(r, c):
 
     if r == n-1 and c == m-1:
         ganeung = 1
-        sys.exit()
+        return 
 
     visited[r][c] = 1
 
