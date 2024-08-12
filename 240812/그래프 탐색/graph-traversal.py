@@ -18,12 +18,8 @@ def move(last_node):
 
     for i in graph[last_node]:
         if visited[i] == 0:
-            node.append(i)
             visited[i] = 1
-
             move(i)
-
-            node.pop()
             visited[i] = 0
 
 move(1)
