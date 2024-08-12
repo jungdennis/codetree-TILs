@@ -1,10 +1,10 @@
 import sys
 
-n, m = map(int, input().split())
+n, m = map(int, sys.stdin.readline().rstrip().split())
 
 graph = [[] for i in range(n+1)]
 for i in range(m):
-    start, end = map(int, input().split())
+    start, end = map(int, sys.stdin.readline().rstrip().split())
     graph[start].append(end)
     graph[end].append(start)
 
