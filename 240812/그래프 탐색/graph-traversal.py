@@ -9,19 +9,22 @@ for i in range(m):
     graph[end].append(start)
 
 visited = [1, 1] + [0] * (n-1)
-approach = []
+cnt = 0
 
 def move(last_node):
-    if last_node not in approach:
-        approach.append(last_node)
-    else:
-        return
-
+    # if last_node not in approach:
+    #     approach.append(last_node)
+    # else:
+    #     return
+    global cnt
+    
     for i in graph[last_node]:
         if visited[i] == 0:
             visited[i] = 1
+            cnt += 1
             move(i)
             visited[i] = 0
 
 move(1)
-print(len(approach)-1)
+# print(len(approach)-1)
+print(cnt)
