@@ -17,13 +17,12 @@ def move(last_node):
     # else:
     #     return
     global cnt
-    
+
     for i in graph[last_node]:
         if visited[i] == 0:
             visited[i] = 1
             cnt += 1
             move(i)
-            visited[i] = 0
 
 move(1)
 # print(len(approach)-1)
