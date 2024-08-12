@@ -11,7 +11,7 @@ def in_range(r, c):
     return r >= 0 and r < n and c >= 0 and c < m
 
 def can_go(r, c):
-    if not in_range(r, c) or visited[r][c] == 1 or arr[r][c] == 1:
+    if not in_range(r, c) or visited[r][c] == 1 or arr[r][c] == 0:
         return False
     else:
         return True
