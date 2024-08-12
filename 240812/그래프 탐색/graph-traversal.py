@@ -17,7 +17,7 @@ def move(last_node):
     print(node)
     max_node = max(len(node), max_node)
 
-    for i in range(1, n):
+    for i in range(1, n+1):
         if arr[last_node][i] == 1 and visited[i] == 0:
             node.append(i)
             visited[i] = 1
