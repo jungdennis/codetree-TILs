@@ -14,6 +14,7 @@ max_node = -sys.maxsize
 
 def move(last_node):
     global max_node
+    print(node)
     max_node = max(len(node), max_node)
 
     for i in range(1, n):
