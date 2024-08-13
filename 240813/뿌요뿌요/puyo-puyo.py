@@ -33,6 +33,6 @@ for r in range(n):
 
             if cnt >= 4:
                 bomb += 1
-                max_cnt = max(cnt, max_cnt)
+            max_cnt = max(cnt, max_cnt)
 
 print(bomb, max_cnt)
