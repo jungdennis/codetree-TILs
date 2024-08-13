@@ -1,3 +1,5 @@
+import sys
+
 n, m = map(int, input().split())
 
 arr = []
@@ -19,8 +21,8 @@ def move(r, c, k):
             visited[nr][nc] = True
             move(nr, nc, k)
 
-max_k = 0
-max_zone = 0
+max_k = -sys.maxsize
+max_zone = -sys.maxsize
 for k in range(1, max_h + 1):
     zone = 0
     visited = [[False for i in range(m)] for j in range(n)]
