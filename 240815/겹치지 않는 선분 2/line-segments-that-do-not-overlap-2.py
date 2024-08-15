@@ -14,7 +14,7 @@ def check_overlap(line1, line2):
     x1_min, x1_max = sorted(line1)
     x2_min, x2_max = sorted(line2)
 
-    if max(x1_min, x2_min) > min(x1_max, x2_max):
+    if max(x1_min, x2_min) >= min(x1_max, x2_max):
         return False
     else:
         a1 = 1 / (x1_2 - x1_1)
