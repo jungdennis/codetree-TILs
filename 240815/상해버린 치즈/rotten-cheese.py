@@ -23,7 +23,7 @@ for m in range(1, M+1):
             if p == p_ and m == m_ and t_ < t:
                 flag += 1
     
-    if flag == len(ill_record):
+    if flag >= len(ill_record):
         bad_cheese[m] = 1
 
 max_cnt = -sys.maxsize
