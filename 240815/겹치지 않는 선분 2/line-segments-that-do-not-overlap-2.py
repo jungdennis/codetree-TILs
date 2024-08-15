@@ -14,7 +14,7 @@ def check_overlap(line1, line2):
     x1_min, x1_max = sorted(line1)
     x2_min, x2_max = sorted(line2)
 
-    if max(x1_min, x2_min) >= min(x1_max, x2_max):
+    if max(x1_min, x2_min) > min(x1_max, x2_max):
         return False
     else:
         a1 = 1 / (x1_2 - x1_1)
@@ -25,7 +25,7 @@ def check_overlap(line1, line2):
         else:
             overlap_x = (a2 * x2_1 - a1 * x1_1) / (a2 - a1)
             # overlap_y = a1 * a2 * (x2_1 - x1_1) / (a2 - a1)
-            if overlap_x >= min(x1_1, x2_1) and overlap_x <= max(x1_2, x2_2):
+            if overlap_x >= max(x1_1, x2_1) and overlap_x <= min(x1_2, x2_2):
                 return True
             else:
                 return False
