@@ -11,6 +11,13 @@ for i in range(11):
         for k in range(11):
             cnt = 0
             for x, y in point:
+                if x == i or x == j or x == k:
+                    cnt += 1
+            if cnt == n:
+                flag = 1
+
+            cnt = 0
+            for x, y in point:
                 if x == i or x == j or y == k:
                     cnt += 1
             if cnt == n:
@@ -19,6 +26,13 @@ for i in range(11):
             cnt = 0
             for x, y in point:
                 if x == i or y == j or y == k:
+                    cnt += 1
+            if cnt == n:
+                flag = 1
+
+            cnt = 0
+            for x, y in point:
+                if y == i or y == j or y == k:
                     cnt += 1
             if cnt == n:
                 flag = 1
