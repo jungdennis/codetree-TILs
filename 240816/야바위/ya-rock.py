@@ -9,7 +9,7 @@ for i in range(n):
 
 stone = [0] * 4
 max_score = -sys.maxsize
-max_idx = 0
+
 for i in range(1, 4):
     stone[i] = 1
     score = 0
@@ -19,8 +19,6 @@ for i in range(1, 4):
         if stone[c] == 1:
             score += 1
 
-    if score > max_score:
-        max_score = score
-        max_idx = i
+    max_score = max(score, max_score)
 
-print(max_idx)
+print(max_score)
