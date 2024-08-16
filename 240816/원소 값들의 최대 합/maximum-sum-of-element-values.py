@@ -5,7 +5,7 @@ arr = [0] + list(map(int, input().split()))
 
 max_sum = -sys.maxsize
 
-for i in range(n):
+for i in range(1, n+1):
     idx = i
     sum_ = 0
     for _ in range(m):
