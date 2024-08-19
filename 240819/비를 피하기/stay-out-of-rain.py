@@ -25,7 +25,7 @@ def bfs():
     while q:
         r, c = q.popleft()
 
-        if arr[r][c] == 3 and step[r][c] != -1:
+        if arr[r][c] == 3:
             return step[r][c]
 
         for dr, dc in [(1, 0), (0, 1), (-1, 0), (0, -1)]:
