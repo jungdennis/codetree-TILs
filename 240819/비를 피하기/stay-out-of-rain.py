@@ -26,6 +26,8 @@ def bfs():
         r, c = q.popleft()
 
         if arr[r][c] == 3 and step[r][c] >= 0:
+            for i in range(n):
+                print(step[i])
             dist.append(step[r][c])
         if len(dist) == len(people):
             return
