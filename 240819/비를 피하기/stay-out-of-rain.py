@@ -38,6 +38,8 @@ def bfs():
                 step[nr][nc] = step[r][c] + 1
                 q.append((nr, nc))
 
+    return -1
+
 ans = [[0 for i in range(n)] for j in range(n)]                
 for r, c in people:
     # print(f'people {(r, c)}')
