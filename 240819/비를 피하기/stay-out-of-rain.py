@@ -16,8 +16,6 @@ for r in range(n):
         if row[c] == 3:
             shelter.append((r, c))
 
-q = deque(people)
-
 def in_range(r, c):
     return r >= 0 and r < n and c >= 0 and c < n
 
@@ -25,12 +23,12 @@ def bfs():
     while q:
         r, c = q.popleft()
 
-        if arr[r][c] == 3 and step[r][c] >= 0:
-            for i in range(n):
-                print(step[i])
-            dist.append(step[r][c])
-        if len(dist) == len(people):
-            return
+        if arr[r][c] == 3:
+            # for i in range(n):
+            #     print(step[i])
+            # print((r, c), step[r][c])
+            
+            return step[r][c]
 
         for dr, dc in [(1, 0), (0, 1), (-1, 0), (0, -1)]:
             nr, nc = r + dr, c + dc
@@ -42,15 +40,16 @@ def bfs():
 
 ans = [[0 for i in range(n)] for j in range(n)]                
 for r, c in people:
+    # print(f'people {(r, c)}')
+    q = deque()
     visited = [[False for i in range(n)] for j in range(n)]
     step = [[-1 for i in range(n)] for j in range(n)]
-    dist = []
 
     visited[r][c] = True
     step[r][c] = 0
     q.append((r, c))
-    bfs()
-    ans[r][c] = min(dist)
+    ans[r][c] = bfs()
+    # ans[r][c] = min(dist)
 
     # min_dist = sys.maxsize
     # for r_, c_ in shelter:
