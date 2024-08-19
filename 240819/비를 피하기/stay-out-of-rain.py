@@ -25,8 +25,10 @@ def bfs():
     while q:
         r, c = q.popleft()
 
-        if arr[r][c] == 3:
-            return step[r][c]
+        if arr[r][c] == 3 and step[r][c] >= 0:
+            dist.append(step[r][c])
+        if len(dist) == len(people):
+            return
 
         for dr, dc in [(1, 0), (0, 1), (-1, 0), (0, -1)]:
             nr, nc = r + dr, c + dc
@@ -40,11 +42,13 @@ ans = [[0 for i in range(n)] for j in range(n)]
 for r, c in people:
     visited = [[False for i in range(n)] for j in range(n)]
     step = [[-1 for i in range(n)] for j in range(n)]
+    dist = []
 
     visited[r][c] = True
     step[r][c] = 0
     q.append((r, c))
-    ans[r][c] = bfs()
+    bfs()
+    ans[r][c] = min(dist)
 
     # min_dist = sys.maxsize
     # for r_, c_ in shelter:
