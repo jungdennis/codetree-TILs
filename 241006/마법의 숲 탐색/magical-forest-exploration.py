@@ -22,7 +22,7 @@ dc = [0, 1, 0, -1]
 def in_range(r, c):
     return r >= 0 and r <= R and c >= 0 and c < C
 
-def can_move(r, c):
+def can_down(r, c):
     if not in_range(r+1, c-1) or forest[r+1][c-1] != 0:
         return False
     elif not in_range(r+2, c) or forest[r+2][c] != 0:
@@ -32,6 +32,26 @@ def can_move(r, c):
 
     return True
 
+def can_left(r, c):
+    if not in_range(r-1, c-1) or forest[r-1][c-1] != 0:
+        return False
+    elif not in_range(r, c-2) or forest[r][c-2] != 0:
+        return False
+    elif not in_range(r+1, c-1) or forest[r+1][c-1] != 0:
+        return False
+
+    return True
+
+def can_right(r, c):
+    if not in_range(r-1, c+1) or forest[r-1][c+1] != 0:
+        return False
+    elif not in_range(r, c+2) or forest[r][c+2] != 0:
+        return False
+    elif not in_range(r+1, c+1) or forest[r+1][c+1] != 0:
+        return False
+
+    return True 
+
 for i in range(K):
     # print(f"<{i}>")
     # 골렘 이동
@@ -39,13 +59,13 @@ for i in range(K):
     c, d = start[i]
 
     while True:
-        if can_move(r, c):
+        if can_down(r, c):
             r += 1
-        elif can_move(r, c-1):
+        elif can_left(r, c) and can_down(r, c-1):
             r += 1
             c -= 1
             d -= 1
-        elif can_move(r, c+1):
+        elif can_right(r, c) and can_down(r, c+1):
             r += 1
             c += 1
             d += 1
