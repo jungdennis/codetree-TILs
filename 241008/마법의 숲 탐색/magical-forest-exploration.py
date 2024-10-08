@@ -25,11 +25,11 @@ def in_range_(r, c):
     return r <= R and c >= 0 and c < C
 
 def can_down(r, c):
-    if not in_range_(r+1, c-1) or forest[r+1][c-1] != 0:
+    if not in_range(r+1, c-1) or forest[r+1][c-1] != 0:
         return False
-    elif not in_range_(r+2, c) or forest[r+2][c] != 0:
+    elif not in_range(r+2, c) or forest[r+2][c] != 0:
         return False
-    elif not in_range_(r+1, c+1) or forest[r+1][c+1] != 0:
+    elif not in_range(r+1, c+1) or forest[r+1][c+1] != 0:
         return False
 
     return True
