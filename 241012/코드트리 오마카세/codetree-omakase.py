@@ -9,7 +9,7 @@ now_time = 0
 for _ in range(Q):
     order = input().split()
 
-    dt = order[1] - now_time
+    dt = int(order[1]) - now_time
     for i in range(dt):
         belt.append(belt.popleft())
 
